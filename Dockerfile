@@ -5,4 +5,6 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
+RUN mkdir /cloudsql
+
 CMD ./run.sh

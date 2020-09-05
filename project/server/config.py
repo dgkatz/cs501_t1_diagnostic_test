@@ -34,10 +34,4 @@ class ProductionConfig(BaseConfig):
     """Production configuration."""
     SECRET_KEY = 'diagnostic_secret'
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = f"" \
-                              f"postgresql+psycopg2://" \
-                              f"{os.getenv('DB_USER', 'postgres')}:" \
-                              f"{os.getenv('DB_PASSWORD', '123')}@" \
-                              f"{os.getenv('DB_HOST', 'db')}:" \
-                              f"{os.getenv('DB_PORT', '5432')}/" \
-                              f"{os.getenv('DB_NAME', 'diagnostic')}"
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URI', 'postgresql+psycopg2://postgres:123@db:5432/diagnostic')
