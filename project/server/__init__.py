@@ -25,7 +25,7 @@ migrate = flask_migrate.Migrate(
 migrate.init_app(app)
 
 with app.app_context():
-    migrate.upgrade()
+    flask_migrate.upgrade()
 
 from project.server.auth.views import auth_blueprint
 app.register_blueprint(auth_blueprint)
