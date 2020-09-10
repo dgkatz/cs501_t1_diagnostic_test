@@ -19,7 +19,7 @@ bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 
 migrate = flask_migrate.Migrate(
-    db=db, directory="../migrations", render_as_batch=False
+    db=db, directory="migrations", render_as_batch=False
 )
 
 migrate.init_app(app)
